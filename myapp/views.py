@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from .models import Message
+
 def example_endpoint(request):
-    # This is the content that will be inserted into the HTML page.
-    content = "<div>This content was loaded with HTMX!</div>"
+    # Retrieve the first message stored in the database
+    message = Message.objects.first()
+    content = f"<div>{message.content}</div>" if message else "<div>No message found.</div>"
     return HttpResponse(content)
 
 
