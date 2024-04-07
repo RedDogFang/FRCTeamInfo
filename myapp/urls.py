@@ -1,6 +1,8 @@
 from django.urls import path
-from . import views
+from .views import example_endpoint, index
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', index, name='index'),
+    path('example-endpoint/', example_endpoint, name='example-endpoint'),
+
 ]

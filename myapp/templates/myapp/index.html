@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Django App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Django App with HTMX and Tailwind CSS</title>
+    <!-- Include Tailwind CSS from CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Include HTMX from CDN -->
+    <script src="https://unpkg.com/htmx.org"></script>
 </head>
-<body>
-    <h1>Welcome to My Django App!</h1>
-    <p>This is my custom index page.</p>
+<body class="bg-gray-100">
+
+    <div class="container mx-auto mt-10">
+        <h1 class="text-4xl font-bold text-center mb-4">Welcome to My Django App!</h1>
+        <p class="text-center">This is my custom index page with HTMX and Tailwind CSS.</p>
+
+        <!-- Example HTMX usage: A simple GET request -->
+        <div hx-get="/example-endpoint/" hx-trigger="click" class="mt-4 text-center">
+            <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition-colors">Load Data with HTMX</button>
+        </div>
+        <!-- The data loaded from the server will be displayed here -->
+        <div id="response" class="mt-4 text-center"></div>
+    </div>
+
 </body>
 </html>
