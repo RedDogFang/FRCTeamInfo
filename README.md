@@ -33,14 +33,18 @@ myenv\Scripts\activate //PS
 $ source myenv/Scripts/activate //Bash
 Your command prompt should now show the name of your virtual environment, indicating that it is active.
 
-Install Project Dependencies
+###Install Project Dependencies
 With the virtual environment activated, use pip to install the project dependencies:
 
 Copy code
 pip install -r requirements.txt
 This will install Django and any other dependencies defined in your requirements.txt file.
 
-Run the Development Server
+###Run Database Migrations
+python manage.py migrate
+This will perform necessary migrations for django
+
+###Run the Development Server
 Once all dependencies are installed, you can start the Django development server:
 
 Copy code
